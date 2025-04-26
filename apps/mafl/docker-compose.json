@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "mafl",
+      "image": "hywax/mafl",
+      "isMain": true,
+      "internalPort": 3000,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/config/",
+          "containerPath": "/app/data/",
+          "readOnly": true
+        }
+      ]
+    }
+  ]
+}
