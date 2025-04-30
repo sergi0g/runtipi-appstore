@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "web",
-      "image": "ghcr.io/maybe-finance/maybe:v0.5.0",
+      "image": "ghcr.io/maybe-finance/maybe:0.5.0",
       "isMain": true,
       "internalPort": 3000,
       "volumes": [
@@ -37,7 +37,7 @@
     },
     {
       "name": "worker",
-      "image": "ghcr.io/maybe-finance/maybe:v0.5.0",
+      "image": "ghcr.io/maybe-finance/maybe:0.5.0",
       "command": ["bundle", "exec", "sidekiq"],
       "dependsOn": {
         "redis": {
