@@ -5,8 +5,7 @@ This is my small personal appstore for Runtipi.
 ## Apps
 
 Here are the apps I have so far:
-
-Whoops! Looks like I haven't added any yet. Working on it...
+- [Maybe](https://github.com/maybe-finance/maybe)
 
 ## Installation
 
