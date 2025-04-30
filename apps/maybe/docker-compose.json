@@ -6,10 +6,9 @@
       "image": "ghcr.io/maybe-finance/maybe:0.5.0",
       "isMain": true,
       "internalPort": 3000,
-      "user": "rails",
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/data",
+          "hostPath": "${APP_DATA_DIR}/data/storage",
           "containerPath": "/rails/storage"
         }
       ],
@@ -65,7 +64,7 @@
       "image": "postgres:16-alpine",
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/db",
+          "hostPath": "${APP_DATA_DIR}/data/db",
           "containerPath": "/var/lib/postgresql/data"
         }
       ],
@@ -86,7 +85,7 @@
       "image": "redis:7-alpine",
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/redis",
+          "hostPath": "${APP_DATA_DIR}/data/redis",
           "containerPath": "/data"
         }
       ],
