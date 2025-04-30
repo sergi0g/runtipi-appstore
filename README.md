@@ -7,6 +7,7 @@ This is my small personal appstore for Runtipi.
 Here are the apps I have so far:
 - [Maybe](https://github.com/maybe-finance/maybe) - A personal finance manager
 - [Mafl](https://github.com/hywax/mafl) - An intuitive service for organizing your homepage
+- [Outline](https://github.com/outline/outline) - Fast, collaborative knowledge base
 
 ## Installation
 
