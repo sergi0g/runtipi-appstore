@@ -4,14 +4,6 @@
 
 Maybe is an open-source personal finance and wealth management app. It makes it easy to track your income and spendings, while providing useful statistics and integrations with different services.
 
-## Setup
-
-Before using Maybe, you'll have to run the following setup command in your `runtipi` folder:
-
-```bash
-$ chown -R 1000:1000 app-data/<your-store-name>/maybe/data/storage
-```
-
 ### Multi-currency support
 
 If you'd like multi-currency support, there are a few extra steps to follow.
