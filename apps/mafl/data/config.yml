@@ -1,0 +1,7 @@
+services:
+  - title: Example
+    description: An example service
+    link: https://mafl.hywax.space/reference/configuration.html
+    icon:
+      url: https://mafl.hywax.space/logotype.svg
+      wrap: true

@@ -8,8 +8,18 @@
       "internalPort": 3000,
       "volumes": [
         {
-          "hostPath": "${APP_DATA_DIR}/config/",
-          "containerPath": "/app/data/",
+          "hostPath": "${APP_DATA_DIR}/data/config.yml",
+          "containerPath": "/app/data/config.yml",
+          "readOnly": true
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/icons",
+          "containerPath": "/app/public/icons",
+          "readOnly": true
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/favicons",
+          "containerPath": "/app/public/favicons",
           "readOnly": true
         }
       ]
