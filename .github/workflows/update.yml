@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: 0 2 * * *
-    
+
 permissions:
   contents: write
   pull-requests: write
@@ -26,3 +26,5 @@ jobs:
 
       - name: Run updater
         run: bun run updater/index.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
