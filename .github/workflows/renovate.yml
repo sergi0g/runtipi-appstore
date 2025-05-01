@@ -32,4 +32,4 @@ jobs:
         run: echo ${{ github.repository }}
 
       - name: Run renovate
-        run: LOG_LEVEL=${{ github.event.inputs.log_level || 'INFO' }} renovate --token ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
+        run: LOG_LEVEL=${{ github.event.inputs.log_level || 'INFO' }} bunx --bun renovate --token ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }}
