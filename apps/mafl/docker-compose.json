@@ -3,7 +3,7 @@
   "services": [
     {
       "name": "mafl",
-      "image": "ghcr.io/hywax/mafl:v0.15.4",
+      "image": "ghcr.io/hywax/mafl:v0.15.3",
       "isMain": true,
       "internalPort": 3000,
       "volumes": [
