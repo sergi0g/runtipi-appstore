@@ -23,7 +23,10 @@
         "OIDC_DISPLAY_NAME": "OpenID",
         "OIDC_SCOPES": "openid profile email"
       },
-      "dependsOn": ["outline-postgres", "outline-redis"],
+      "dependsOn": [
+        "outline-postgres",
+        "outline-redis"
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/outline",
@@ -33,7 +36,7 @@
     },
     {
       "name": "outline-postgres",
-      "image": "postgres:16-alpine",
+      "image": "library/postgres:17-alpine",
       "environment": {
         "POSTGRES_USER": "outline",
         "POSTGRES_PASSWORD": "${OUTLINE_PG_PASSWORD}",
@@ -85,7 +88,10 @@
       "image": "nginx:alpine",
       "isMain": true,
       "internalPort": 80,
-      "dependsOn": ["outline", "outline-oidc"],
+      "dependsOn": [
+        "outline",
+        "outline-oidc"
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/nginx/",
