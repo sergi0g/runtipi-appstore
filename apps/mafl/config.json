@@ -7,15 +7,20 @@
   "dynamic_config": true,
   "id": "mafl",
   "description": "Mafl is an intuitive service for organizing your homepage. Customize Mafl to your individual needs and work even more efficiently!",
-  "tipi_version": 1,
-  "version": "0.15.3",
-  "categories": ["utilities"],
+  "tipi_version": 2,
+  "version": "0.15.4",
+  "categories": [
+    "utilities"
+  ],
   "short_desc": "A simple homepage for minimalists.",
   "author": "hywax",
   "source": "https://github.com/hywax/mafl",
   "website": "https://mafl.hywax.space/",
   "form_fields": [],
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1745663577000,
-  "updated_at": 1746032451000
+  "updated_at": 1746100873410
 }
