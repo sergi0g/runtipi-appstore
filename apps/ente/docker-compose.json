@@ -84,7 +84,7 @@
       "entrypoint": [
         "/bin/sh",
         "-c",
-        "\"while ! mc config host add h0 http://minio:3200 ente ${MINIO_PASSWORD} 2>/dev/null\ndo\n\techo 'Waiting for minio...'\n\tsleep 0.5\ndone;cd /data; mc mb -p b2-eu-cen;mc mb -p wasabi-eu-central-2-v3; mc mb -p scw-eu-fr-v3\""
+        "\"while ! mc config host add h0 http://minio:3200 ente ${MINIO_PASSWORD} 2>/dev/null\ndo\n\techo 'Waiting for minio...'\n\tsleep 0.5\ndone\ncd /data\nmc mb -p b2-eu-cen\nmc mb -p wasabi-eu-central-2-v3\nmc mb -p scw-eu-fr-v3\""
       ]
     }
   ]
