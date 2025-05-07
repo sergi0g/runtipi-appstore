@@ -21,6 +21,13 @@ async function main() {
       // Get app configuration and compose file
       const { config, compose } = await getAppData(appId);
 
+      if (!config.version || config.version == "latest") {
+        console.warn(
+          `Skipping ${appId} because no version is declared in config`,
+        );
+        continue;
+      }
+
       // Get list of images to check
       const imagesToCheck = compose.services
         .map((service) => service.image)
@@ -46,8 +53,8 @@ async function main() {
 
       // Process updates
       for (const image of checkResult.images) {
-        const service = compose.services.find(
-          (s) => image.reference.includes(s.image),
+        const service = compose.services.find((s) =>
+          image.reference.includes(s.image),
         );
         if (!service || !image.result.has_update || !image.result.info)
           continue;
