@@ -10,7 +10,7 @@ db:
   port: 5432
   name: ente
   user: ente
-  password: $pg_pass
+  password: {{DB_PASSWORD}}
 
 s3:
   are_local_buckets: true

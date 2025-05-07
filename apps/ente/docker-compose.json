@@ -67,9 +67,9 @@
         "server",
         "/data",
         "--address",
-        "3200",
+        "0.0.0.0:3200",
         "--console-address",
-        "3201"
+        "0.0.0.0:3201"
       ],
       "volumes": [
         { "hostPath": "${APP_DATA_DIR}/data/minio", "containerPath": "/data" }
