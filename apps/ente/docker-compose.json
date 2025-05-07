@@ -45,7 +45,7 @@
         "POSTGRES_DB": "ente"
       },
       "healthCheck": {
-        "test": "pg_isready -q -d ente_db -U pguser",
+        "test": "pg_isready -q -d ente -U ente",
         "startPeriod": "40s",
         "startInterval": "1s"
       },
@@ -67,9 +67,9 @@
         "server",
         "/data",
         "--address",
-        "\":3200\"",
+        "3200",
         "--console-address",
-        "\":3201\""
+        "3201"
       ],
       "volumes": [
         { "hostPath": "${APP_DATA_DIR}/data/minio", "containerPath": "/data" }
@@ -82,7 +82,7 @@
       "entrypoint": [
         "/bin/sh",
         "-c",
-        "\"while ! mc config host add h0 http://minio:3200 ente ${MINIO_PASSWORD} 2>/dev/null\ndo\n\techo \"Waiting for minio...\"\n\tsleep 0.5\ndone;cd /data; mc mb -p b2-eu-cen;mc mb -p wasabi-eu-central-2-v3; mc mb -p scw-eu-fr-v3\""
+        "\"while ! mc config host add h0 http://minio:3200 ente ${MINIO_PASSWORD} 2>/dev/null\ndo\n\techo 'Waiting for minio...'\n\tsleep 0.5\ndone;cd /data; mc mb -p b2-eu-cen;mc mb -p wasabi-eu-central-2-v3; mc mb -p scw-eu-fr-v3\""
       ]
     }
   ]
