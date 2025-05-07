@@ -9,6 +9,12 @@
           "condition": "service_healthy"
         }
       },
+      "addPorts": [
+        {
+          "hostPort": 8276,
+          "containerPort": 8080
+        }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/museum.yaml",
@@ -32,9 +38,6 @@
     {
       "name": "web",
       "image": "ghcr.io/ente-io/web@sha256:044e9f86062a9b70775e35bc5852483a6b7af53ffc3aa9b78931a4d794840f4f",
-      "environment": {
-        "ENTE_API_ORIGIN": "http://museum:8080"
-      },
       "isMain": true,
       "internalPort": 3000
     },
