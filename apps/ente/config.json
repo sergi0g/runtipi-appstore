@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Ente",
+  "id": "ente",
+  "available": true,
+  "short_desc": "🔒 End-to-end encrypted platform for photos, videos and 2FA secrets.",
+  "author": "Ente",
+  "source": "https://github.com/ente-io/ente",
+  "website": "https://ente.io",
+  "tipi_version": 1,
+  "port": 8275,
+  "categories": ["photography", "security", "data"],
+  "version": "latest",
+  "dynamic_config": true,
+  "exposable": true,
+  "force_pull": true,
+  "supported_architectures": ["amd64", "arm64"],
+  "created_at": 1746622056000,
+  "updated_at": 1746623257000,
+  "form_fields": [
+    {
+      "type": "random",
+      "encoding": "base64",
+      "label": "Database password",
+      "env_variable": "DB_PASSWORD",
+      "min": 21
+    },
+    {
+      "type": "random",
+      "encoding": "base64",
+      "label": "Minio password",
+      "env_variable": "MINIO_PASSWORD",
+      "min": 21
+    },
+    {
+      "type": "random",
+      "encoding": "base64",
+      "label": "Museum key",
+      "env_variable": "MUSEUM_KEY",
+      "min": 32
+    },
+    {
+      "type": "random",
+      "encoding": "base64",
+      "label": "Museum hash",
+      "env_variable": "MUSEUM_HASH",
+      "min": 64
+    },
+    {
+      "type": "random",
+      "label": "Museum JWT secret",
+      "env_variable": "MUSEUM_JWT_SECRET",
+      "min": 64
+    }
+  ]
+}

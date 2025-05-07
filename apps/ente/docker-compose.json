@@ -1,0 +1,89 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "museum",
+      "image": "ghcr.io/ente-io/server@sha256:86750540c4252867ef43f79e75c88c351a4d377b5d27136a89f3b058a3eabb36",
+      "dependsOn": {
+        "db": {
+          "condition": "service_healthy"
+        }
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/museum.yaml",
+          "containerPath": "/museum.yaml",
+          "readOnly": true
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/data",
+          "containerPath": "/data",
+          "readOnly": true
+        }
+      ]
+    },
+    {
+      "name": "socat",
+      "image": "alpine/socat:1.8.0.3",
+      "networkMode": "service:museum",
+      "dependsOn": ["museum"],
+      "command": ["TCP-LISTEN:3200,fork,reuseaddr", "TCP:minio:3200"]
+    },
+    {
+      "name": "web",
+      "image": "ghcr.io/ente-io/web@sha256:044e9f86062a9b70775e35bc5852483a6b7af53ffc3aa9b78931a4d794840f4f",
+      "environment": {
+        "ENTE_API_ORIGIN": "http://museum:8080"
+      }
+    },
+    {
+      "name": "db",
+      "image": "postgres:15-alpine",
+      "environment": {
+        "POSTGRES_USER": "ente",
+        "POSTGRES_PASSWORD": "${DB_PASSWORD}",
+        "POSTGRES_DB": "ente"
+      },
+      "healthCheck": {
+        "test": "pg_isready -q -d ente_db -U pguser",
+        "startPeriod": "40s",
+        "startInterval": "1s"
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/postgres",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "name": "minio",
+      "image": "minio/minio:RELEASE.2025-04-22T22-12-26Z",
+      "environment": {
+        "MINIO_ROOT_USER": "ente",
+        "MINIO_ROOT_PASSWORD": "${MINIO_PASSWORD}"
+      },
+      "command": [
+        "server",
+        "/data",
+        "--address",
+        "\":3200\"",
+        "--console-address",
+        "\":3201\""
+      ],
+      "volumes": [
+        { "hostPath": "${APP_DATA_DIR}/data/minio", "containerPath": "/data" }
+      ]
+    },
+    {
+      "name": "minio-setup",
+      "image": "minio/minio:RELEASE.2025-04-22T22-12-26Z",
+      "dependsOn": ["minio"],
+      "entrypoint": [
+        "/bin/sh",
+        "-c",
+        "\"while ! mc config host add h0 http://minio:3200 ente ${MINIO_PASSWORD} 2>/dev/null\ndo\n\techo \"Waiting for minio...\"\n\tsleep 0.5\ndone;cd /data; mc mb -p b2-eu-cen;mc mb -p wasabi-eu-central-2-v3; mc mb -p scw-eu-fr-v3\""
+      ]
+    }
+  ]
+}
