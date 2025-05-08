@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "synapse",
+      "isMain": true,
+      "internalPort": 8008,
+      "image": "ghcr.io/element-hq/synapse:v1.129.0",
+      "environment": {
+        "SYNAPSE_CONFIG_PATH": "/data/homeserver.yaml"
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/data",
+          "containerPath": "/data"
+        }
+      ],
+      "dependsOn": ["db"]
+    },
+    {
+      "name": "db",
+      "image": "postgres:15-alpine",
+      "environment": {
+        "POSTGRES_USER": "synapse",
+        "POSTGRES_PASSWORD": "${DB_PASSWORD}",
+        "POSTGRES_DB": "synapse",
+        "POSTGRES_INITDB_ARGS": "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+      },
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/postgres",
+          "containerPath": "/var/lib/postgresql/data"
+        }
+      ]
+    }
+  ]
+}

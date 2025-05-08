@@ -1,0 +1,34 @@
+# This is Synapse's configuration file.
+# The reference is at https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html
+#
+# These options are critical for the app to work and should not be changed
+server_name: {{APP_DOMAIN}}
+database:
+  name: psycopg2
+  args:
+    user: synapse
+    password: {{DB_PASSWORD}}
+    dbname: synapse
+    host: db
+    cp_min: 5
+    cp_max: 10
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    bind_addresses: ['0.0.0.0']
+    resources:
+      - names: [client, federation]
+        compress: false
+media_store_path: /data/media_store
+signing_key_path: "/data/{{APP_DOMAIN}}.signing.key"
+trusted_key_servers:
+  - server_name: "matrix.org"
+registration_shared_secret: {{REGISTRATION_SHARED_SECRET}}
+
+# These options aren't critical and can be changed
+serve_server_wellknown: true
+report_stats: false
+
+# What else will you add? ;)

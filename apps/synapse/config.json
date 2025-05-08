@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Synapse",
+  "available": true,
+  "port": 8448,
+  "exposable": true,
+  "force_expose": true,
+  "dynamic_config": true,
+  "id": "synapse",
+  "tipi_version": 1,
+  "version": "1.129.0",
+  "categories": ["social"],
+  "short_desc": "Open source Matrix homeserver written in Python/Twisted.",
+  "author": "Element",
+  "source": "https://github.com/element-hq/synapse",
+  "website": "https://element-hq.github.io/synapse",
+  "form_fields": [
+    {
+      "label": "Database password",
+      "type": "random",
+      "min": 32,
+      "env_variable": "DB_PASSWORD"
+    },
+    {
+      "label": "Registration shared secret",
+      "encoding": "base64",
+      "type": "random",
+      "min": 32,
+      "env_variable": "REGISTRATION_SHARED_SECRET"
+    }
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1746710112000,
+  "updated_at": 1746711649000
+}
