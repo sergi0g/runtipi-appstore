@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "services": [
+    {
+      "name": "seafile",
+      "isMain": true,
+      "internalPort": 80,
+      "image": "seafileltd/seafile-mc:12.0.11",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/seafile",
+          "containerPath": "/shared"
+        }
+      ],
+      "environment": {
+        "DB_HOST": "db",
+        "DB_ROOT_PASSWD": "${DB_PASSWORD}",
+        "JWT_PRIVATE_KEY": "${JWT_PRIVATE_KEY}",
+        "INIT_SEAFILE_ADMIN_EMAIL": "${ADMIN_USERNAME}",
+        "INIT_SEAFILE_ADMIN_PASSWORD": "${ADMIN_PASSWORD}",
+        "SEAFILE_SERVER_LETSENCRYPT": "false",
+        "ENABLE_SEADOC": "true",
+        "SEADOC_SERVER_URL": "http://seadoc"
+      },
+      "dependsOn": ["db"]
+    },
+    {
+      "name": "seadoc",
+      "image": "seafileltd/sdoc-server:1.0.5",
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data/seadoc",
+          "containerPath": "/shared"
+        }
+      ],
+      "environment": {
+        "DB_HOST": "db",
+        "DB_ROOT_PASSWD": "${DB_PASSWORD}",
+        "DB_NAME": "seahub_db",
+        "DB_USER": "root",
+        "JWT_PRIVATE_KEY": "${JWT_PRIVATE_KEY}",
+        "SEAHUB_SERVICE_URL": "http://seafile"
+      }
+    },
+    {
+      "name": "db",
+      "image": "mariadb:11.4",
+      "environment": {
+        "MYSQL_ROOT_PASSWORD": "${DB_PASSWORD}"
+      }
+    }
+  ]
+}

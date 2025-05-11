@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
+  "name": "Seafile",
+  "available": true,
+  "port": 8314,
+  "exposable": true,
+  "force_expose": true,
+  "dynamic_config": true,
+  "id": "seafile",
+  "tipi_version": 1,
+  "version": "12.0.11",
+  "categories": ["data"],
+  "short_desc": "High performance file syncing and sharing, with also Markdown WYSIWYG editing, Wiki, file label and other knowledge management features.",
+  "author": "Seafile Ltd.",
+  "source": "https://github.com/haiwen/seafile",
+  "website": "https://www.seafile.com/en/home/",
+  "form_fields": [
+    {
+      "label": "Database password",
+      "type": "random",
+      "min": 32,
+      "env_variable": "DB_PASSWORD"
+    },
+    {
+      "label": "JWT private key",
+      "type": "random",
+      "encoding": "base64",
+      "min": 32,
+      "env_variable": "JWT_PRIVATE_KEY"
+    },
+    {
+      "label": "Admin username",
+      "type": "text",
+      "env_variable": "ADMIN_USERNAME"
+    },
+    {
+      "label": "Admin password",
+      "type": "password",
+      "min": 8,
+      "env_variable": "ADMIN_PASSWORD"
+    }
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1746982349000,
+  "updated_at": 1746982349000
+}
