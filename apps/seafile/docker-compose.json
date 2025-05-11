@@ -39,7 +39,8 @@
         "DB_NAME": "seahub_db",
         "DB_USER": "root",
         "JWT_PRIVATE_KEY": "${JWT_PRIVATE_KEY}",
-        "SEAHUB_SERVICE_URL": "http://seafile"
+        "SEAHUB_SERVICE_URL": "http://seafile",
+        "SEAFILE_SERVER_HOSTNAME": "${APP_DOMAIN}"
       }
     },
     {
