@@ -20,7 +20,8 @@
         "INIT_SEAFILE_ADMIN_PASSWORD": "${ADMIN_PASSWORD}",
         "SEAFILE_SERVER_LETSENCRYPT": "false",
         "ENABLE_SEADOC": "true",
-        "SEADOC_SERVER_URL": "http://seadoc"
+        "SEADOC_SERVER_URL": "http://seadoc",
+        "SEAFILE_SERVER_HOSTNAME": "${APP_DOMAIN}"
       },
       "dependsOn": ["db"]
     },
@@ -39,8 +40,7 @@
         "DB_NAME": "seahub_db",
         "DB_USER": "root",
         "JWT_PRIVATE_KEY": "${JWT_PRIVATE_KEY}",
-        "SEAHUB_SERVICE_URL": "http://seafile",
-        "SEAFILE_SERVER_HOSTNAME": "${APP_DOMAIN}"
+        "SEAHUB_SERVICE_URL": "http://seafile"
       }
     },
     {
