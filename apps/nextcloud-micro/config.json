@@ -4,7 +4,7 @@
     "available": true,
     "short_desc": "A safe home for all your data.",
     "author": "Nextcloud GmbH",
-    "port": 8301,
+    "port": 53001,
     "categories": [
         "data"
     ],
