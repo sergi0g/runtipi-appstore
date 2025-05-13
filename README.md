@@ -9,6 +9,7 @@ Here are the apps I have so far:
 - [Mafl](https://github.com/hywax/mafl) - An intuitive service for organizing your homepage
 - [Outline](https://github.com/outline/outline) - Fast, collaborative knowledge base
 - [Synapse](https://github.com/element-hq/synapse) - Open source Matrix homeserver
+- [Nextcloud Micro](https://github.com/nextcloud/server) - A very very basic Nextcloud installation (no external DB, cache or any other fancy stuff)
 
 ## Installation
 
