@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/app-info-schema.json",
   "name": "Seafile",
   "available": true,
-  "port": 8314,
+  "port": 53002,
   "exposable": true,
   "force_expose": true,
   "dynamic_config": true,
