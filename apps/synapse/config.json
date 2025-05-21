@@ -7,9 +7,11 @@
   "force_expose": true,
   "dynamic_config": true,
   "id": "synapse",
-  "tipi_version": 1,
-  "version": "1.129.0",
-  "categories": ["social"],
+  "tipi_version": 2,
+  "version": "1.130.0",
+  "categories": [
+    "social"
+  ],
   "short_desc": "Open source Matrix homeserver written in Python/Twisted.",
   "author": "Element",
   "source": "https://github.com/element-hq/synapse",
@@ -29,7 +31,10 @@
       "env_variable": "REGISTRATION_SHARED_SECRET"
     }
   ],
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1746710112000,
-  "updated_at": 1746711649000
+  "updated_at": 1747796891760
 }
