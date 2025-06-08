@@ -1,0 +1,16 @@
+dns:
+  port: 53
+  preferredUpstream: 9.9.9.9:53
+  upstreamDNS:
+    - 9.9.9.9:53
+  cacheTTL: 600 # Cache responses for 10 minutes
+
+api:
+  port: 8080
+  authentication: true
+
+statisticsRetention: 30 # Keep statistics for 30 days
+
+loggingEnabled: true # Set to false for better privacy and/or reduced disk I/O
+
+logLevel: 1 # 0: Debug - 3: Error, 1 is info

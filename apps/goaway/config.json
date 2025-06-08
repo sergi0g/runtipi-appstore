@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Goaway",
+  "author": "pommee",
+  "available": true,
+  "categories": [
+    "network",
+    "security"
+  ],
+  "created_at": 1749389381000,
+  "short_desc": "A lightweight DNS sinkhole for blocking unwanted domains at the network level",
+  "description": "A lightweight DNS sinkhole for blocking unwanted domains at the network level. Block ads, trackers, and malicious domains before they reach your devices.",
+  "dynamic_config": true,
+  "id": "goaway",
+  "port": 53002,
+  "exposable": true,
+  "source": "https://github.com/pommee/goaway",
+  "supported_architectures": ["amd64", "arm64"],
+  "tipi_version": 2,
+  "updated_at": 1749389531000,
+  "version": "0.51.1",
+  "website": "https://github.com/pommee/goaway"
+}
