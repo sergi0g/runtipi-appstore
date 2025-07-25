@@ -7,9 +7,11 @@
   "dynamic_config": true,
   "id": "maybe",
   "description": "Maybe is a fully open-source OS for your personal finances built by a small team alongside an incredible community",
-  "tipi_version": 1,
-  "version": "0.5.0",
-  "categories": ["utilities"],
+  "tipi_version": 2,
+  "version": "0.6.0",
+  "categories": [
+    "utilities"
+  ],
   "short_desc": "The personal finance app for everyone.",
   "author": "maybe-finance",
   "source": "https://github.com/maybe-finance/maybe",
@@ -38,7 +40,10 @@
       "min": 64
     }
   ],
-  "supported_architectures": ["arm64", "amd64"],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
   "created_at": 1746019505000,
-  "updated_at": 1746019505000
+  "updated_at": 1753413921894
 }
