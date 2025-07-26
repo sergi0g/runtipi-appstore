@@ -7,7 +7,7 @@
   "dynamic_config": true,
   "id": "maybe",
   "description": "Maybe is a fully open-source OS for your personal finances built by a small team alongside an incredible community",
-  "tipi_version": 2,
+  "tipi_version": 3,
   "version": "0.6.0",
   "categories": [
     "utilities"
@@ -45,5 +45,5 @@
     "amd64"
   ],
   "created_at": 1746019505000,
-  "updated_at": 1753413921894
+  "updated_at": 1753500121471
 }
