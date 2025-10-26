@@ -12,11 +12,20 @@
           "containerPath": "/var/www/html"
         }
       ],
-      "environment": {
-        "NEXTCLOUD_ADMIN_USER": "${NEXTCLOUD_ADMIN_USER}",
-        "NEXTCLOUD_ADMIN_PASSWORD": "${NEXTCLOUD_ADMIN_PASSWORD}",
-        "NEXTCLOUD_TRUSTED_DOMAINS": "${NEXTCLOUD_TRUSTED_DOMAINS}"
-      }
+      "environment": [
+        {
+          "key": "NEXTCLOUD_ADMIN_USER",
+          "value": "${NEXTCLOUD_ADMIN_USER}"
+        },
+        {
+          "key": "NEXTCLOUD_ADMIN_PASSWORD",
+          "value": "${NEXTCLOUD_ADMIN_PASSWORD}"
+        },
+        {
+        "key": "NEXTCLOUD_TRUSTED_DOMAINS",
+        "value": "${NEXTCLOUD_TRUSTED_DOMAINS}"
+        }
+      ]
     }
   ]
 }
