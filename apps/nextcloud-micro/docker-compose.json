@@ -1,5 +1,6 @@
 {
   "$schema": "../dynamic-compose-schema.json",
+  "schemaVersion": 2,
   "services": [
     {
       "name": "nextcloud",
@@ -22,8 +23,8 @@
           "value": "${NEXTCLOUD_ADMIN_PASSWORD}"
         },
         {
-        "key": "NEXTCLOUD_TRUSTED_DOMAINS",
-        "value": "${NEXTCLOUD_TRUSTED_DOMAINS}"
+          "key": "NEXTCLOUD_TRUSTED_DOMAINS",
+          "value": "${NEXTCLOUD_TRUSTED_DOMAINS}"
         }
       ]
     }
