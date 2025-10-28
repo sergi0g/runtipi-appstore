@@ -1,14 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "schemaVersion": 2,
   "services": [
     {
       "name": "synapse",
       "isMain": true,
       "internalPort": 8008,
       "image": "ghcr.io/element-hq/synapse:v1.140.0",
-      "environment": {
-        "SYNAPSE_CONFIG_PATH": "/data/homeserver.yaml"
-      },
+      "environment": [
+        {"key": "SYNAPSE_CONFIG_PATH", "value": "/data/homeserver.yaml"}
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/data",
@@ -22,12 +23,12 @@
     {
       "name": "db",
       "image": "postgres:15-alpine",
-      "environment": {
-        "POSTGRES_USER": "synapse",
-        "POSTGRES_PASSWORD": "${DB_PASSWORD}",
-        "POSTGRES_DB": "synapse",
-        "POSTGRES_INITDB_ARGS": "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
-      },
+      "environment": [
+        {"key": "POSTGRES_USER", "value": "synapse"},
+        {"key": "POSTGRES_PASSWORD", "value": "${DB_PASSWORD}"},
+        {"key": "POSTGRES_DB", "value": "synapse"},
+        {"key": "POSTGRES_INITDB_ARGS", "value": "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"}
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/postgres",

@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "schemaVersion": 2,
   "services": [
     {
       "name": "web",
@@ -12,20 +13,20 @@
           "containerPath": "/rails/storage"
         }
       ],
-      "environment": {
-        "POSTGRES_USER": "maybe",
-        "POSTGRES_PASSWORD": "${POSTGRES_PASSWORD}",
-        "POSTGRES_DB": "maybe",
-        "SECRET_KEY_BASE": "${SECRET_KEY_BASE}",
-        "SELF_HOSTED": "true",
-        "RAILS_FORCE_SSL": "false",
-        "RAILS_ASSUME_SSL": "false",
-        "DB_HOST": "db",
-        "DB_PORT": "5432",
-        "REDIS_URL": "redis://redis:6379/1",
-        "OPENAI_ACCESS_TOKEN": "${OPENAI_ACCESS_TOKEN}",
-        "SYNTH_API_KEY": "${SYNTH_API_KEY}"
-      },
+      "environment": [
+        {"key": "POSTGRES_USER", "value": "maybe"},
+        {"key": "POSTGRES_PASSWORD", "value": "${POSTGRES_PASSWORD}"},
+        {"key": "POSTGRES_DB", "value": "maybe"},
+        {"key": "SECRET_KEY_BASE", "value": "${SECRET_KEY_BASE}"},
+        {"key": "SELF_HOSTED", "value": "true"},
+        {"key": "RAILS_FORCE_SSL", "value": "false"},
+        {"key": "RAILS_ASSUME_SSL", "value": "false"},
+        {"key": "DB_HOST", "value": "db"},
+        {"key": "DB_PORT", "value": "5432"},
+        {"key": "REDIS_URL", "value": "redis://redis:6379/1"},
+        {"key": "OPENAI_ACCESS_TOKEN", "value": "${OPENAI_ACCESS_TOKEN}"},
+        {"key": "SYNTH_API_KEY", "value": "${SYNTH_API_KEY}"}
+      ],
       "dependsOn": {
         "db": {
           "condition": "service_healthy"
@@ -48,20 +49,20 @@
           "condition": "service_healthy"
         }
       },
-      "environment": {
-        "POSTGRES_USER": "maybe",
-        "POSTGRES_PASSWORD": "${POSTGRES_PASSWORD}",
-        "POSTGRES_DB": "maybe",
-        "SECRET_KEY_BASE": "${SECRET_KEY_BASE}",
-        "SELF_HOSTED": "true",
-        "RAILS_FORCE_SSL": "false",
-        "RAILS_ASSUME_SSL": "false",
-        "DB_HOST": "db",
-        "DB_PORT": "5432",
-        "REDIS_URL": "redis://redis:6379/1",
-        "OPENAI_ACCESS_TOKEN": "${OPENAI_ACCESS_TOKEN}",
-        "SYNTH_API_KEY": "${SYNTH_API_KEY}"
-      }
+      "environment": [
+        {"key": "POSTGRES_USER", "value": "maybe"},
+        {"key": "POSTGRES_PASSWORD", "value": "${POSTGRES_PASSWORD}"},
+        {"key": "POSTGRES_DB", "value": "maybe"},
+        {"key": "SECRET_KEY_BASE", "value": "${SECRET_KEY_BASE}"},
+        {"key": "SELF_HOSTED", "value": "true"},
+        {"key": "RAILS_FORCE_SSL", "value": "false"},
+        {"key": "RAILS_ASSUME_SSL", "value": "false"},
+        {"key": "DB_HOST", "value": "db"},
+        {"key": "DB_PORT", "value": "5432"},
+        {"key": "REDIS_URL", "value": "redis://redis:6379/1"},
+        {"key": "OPENAI_ACCESS_TOKEN", "value": "${OPENAI_ACCESS_TOKEN}"},
+        {"key": "SYNTH_API_KEY", "value": "${SYNTH_API_KEY}"}
+      ]
     },
     {
       "name": "db",
@@ -72,11 +73,11 @@
           "containerPath": "/var/lib/postgresql/data"
         }
       ],
-      "environment": {
-        "POSTGRES_USER": "maybe",
-        "POSTGRES_PASSWORD": "${POSTGRES_PASSWORD}",
-        "POSTGRES_DB": "maybe"
-      },
+      "environment": [
+        {"key": "POSTGRES_USER", "value": "maybe"},
+        {"key": "POSTGRES_PASSWORD", "value": "${POSTGRES_PASSWORD}"},
+        {"key": "POSTGRES_DB", "value": "maybe"}
+      ],
       "healthCheck": {
         "test": "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB",
         "interval": "5s",

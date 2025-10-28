@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/runtipi/runtipi-appstore/refs/heads/master/apps/dynamic-compose-schema.json",
+  "schemaVersion": 2,
   "services": [
     {
       "name": "mafl",
