@@ -9,9 +9,9 @@
     "data"
   ],
   "description": "Nextcloud is a suite of client-server software for creating and using file hosting services.",
-  "tipi_version": 8,
+  "tipi_version": 9,
   "min_tipi_version": "4.5.0",
-  "version": "31.0.9",
+  "version": "32.0.1",
   "source": "https://github.com/nextcloud/server",
   "website": "https://nextcloud.com",
   "exposable": true,
@@ -20,7 +20,7 @@
     "amd64"
   ],
   "created_at": 1747144662000,
-  "updated_at": 1761472500000,
+  "updated_at": 1762830573108,
   "dynamic_config": true,
   "form_fields": [
     {
