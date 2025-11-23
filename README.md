@@ -5,11 +5,13 @@ This is my small personal appstore for Runtipi.
 ## Apps
 
 Here are the apps I have so far:
-- [Maybe](https://github.com/maybe-finance/maybe) - A personal finance manager
 - [Mafl](https://github.com/hywax/mafl) - An intuitive service for organizing your homepage
 - [Outline](https://github.com/outline/outline) - Fast, collaborative knowledge base
 - [Synapse](https://github.com/element-hq/synapse) - Open source Matrix homeserver
-- [Nextcloud Micro](https://github.com/nextcloud/server) - A very very basic Nextcloud installation (no external DB, cache or any other fancy stuff)
+
+Deprecated apps (if you use these, please make sure to migrate to alternatives, as they will eventually be removed):
+- [Maybe](https://github.com/maybe-finance/maybe) - A personal finance manager _(discontinued by the developers)_
+- [Nextcloud Micro](https://github.com/nextcloud/server) - A very very basic Nextcloud installation (no external DB, cache or any other fancy stuff) _(Nextcloud has moved on to the next major version and will not be providing updates for this)_
 
 ## Installation
 
