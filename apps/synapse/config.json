@@ -7,8 +7,8 @@
   "force_expose": true,
   "dynamic_config": true,
   "id": "synapse",
-  "tipi_version": 21,
-  "version": "1.145.0",
+  "tipi_version": 22,
+  "version": "1.146.0",
   "categories": [
     "social"
   ],
@@ -36,5 +36,5 @@
     "amd64"
   ],
   "created_at": 1746710112000,
-  "updated_at": 1768447558161
+  "updated_at": 1769571615952
 }
