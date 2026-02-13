@@ -6,7 +6,7 @@
       "name": "synapse",
       "isMain": true,
       "internalPort": 8008,
-      "image": "ghcr.io/element-hq/synapse:v1.147.0",
+      "image": "ghcr.io/element-hq/synapse:v1.147.1",
       "environment": [
         {
           "key": "SYNAPSE_CONFIG_PATH",
