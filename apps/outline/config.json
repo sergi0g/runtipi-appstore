@@ -10,8 +10,8 @@
     "utilities"
   ],
   "description": "Outline is a knowledge base designed for teams. It's goals are to be fast, intuitive and support many integrations.",
-  "tipi_version": 34,
-  "version": "1.6.1",
+  "tipi_version": 35,
+  "version": "1.7.0",
   "source": "https://github.com/outline/outline",
   "website": "https://getoutline.com",
   "exposable": true,
@@ -75,5 +75,5 @@
     "amd64"
   ],
   "created_at": 1691943801422,
-  "updated_at": 1773979736646
+  "updated_at": 1777091542213
 }
